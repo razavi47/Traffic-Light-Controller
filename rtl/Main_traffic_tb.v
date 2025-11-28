@@ -26,44 +26,44 @@ module Main_traffic_tb();
     
     initial begin
         clk = 0; reset = 0; pause = 0; SW = 10'b0;
-        $display("\n TESTBENCH START \n");
+        $display("\n Testbench start \n");
 
         reset = 1;  #20;
         reset = 0;  #200;
 
-        $display(">> PAUSE ENGAGED"); // pause
+        $display("pause engaged"); // pause
         pause = 1; #20; pause = 0;
         #200;
 
         
-        $display(">> RESUME"); // unpause
+        $display("resume"); // unpause
         pause = 1; #20; pause = 0;
         #200;
 
-        $display(">> RESET to HOLD"); // SW8 = 1, SW9 = 0
+        $display("reset to hold"); // SW8 = 1, SW9 = 0
         SW[8]=1; SW[9]=0;
         reset = 1; #20; reset = 0;
         #200;
         SW=0;
 
-        $display(">> RESET to GO"); // SW8 = 0, SW9 = 1
+        $display("reset to go"); // SW8 = 0, SW9 = 1
         SW[9]=1; SW[8]=0;
         reset = 1; #20; reset = 0;
         #300;
         SW=0;
 
-        $display(">> RESET to SLOW"); // SW8 = 1, SW9 = 1
+        $display("reset to slow"); // SW8 = 1, SW9 = 1
         SW[9]=1; SW[8]=1;
         reset = 1; #20; reset = 0;
         #300;
         SW=0;
 
       
-        $display(">> RESET to STOP"); // SW8 = 1, SW9 = 0
+        $display("reset to stop"); // SW8 = 1, SW9 = 0
         reset = 1; #20; reset = 0;
         #300;
 
-        $display("\n TESTBENCH COMPLETE \n");
+        $display("\n Testbench over \n");
         $stop;
     end
 
