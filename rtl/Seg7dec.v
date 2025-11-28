@@ -1,6 +1,6 @@
 module Seg7dec(x,y);
-	input [3:0] x;
-	output [6:0] y;
+	input [3:0] x; // bits
+	output [6:0] y; // segment light up
 
 	assign y[6] = ~x[3]&((~x[2]&~x[1])|(x[2]&x[1]&x[0])) | (x[3]&x[2]&~x[1]&~x[0]);
 	assign y[5] = ~x[3]&~x[2]&(x[1] | x[0])|(x[2]&x[0]&(x[3]&~x[1] | ~x[3]&x[1]));
