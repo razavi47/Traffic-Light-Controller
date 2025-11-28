@@ -1,4 +1,4 @@
-module Seg7dec(x,y); // this module was taken from our Lab 2 submission that we worked on earlier in the semester
+module Seg7dec(x,y);
 	input [3:0] x;
 	output [6:0] y;
 
