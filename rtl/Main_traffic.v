@@ -19,7 +19,7 @@ module Main_traffic(clk, reset, pause, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR,
 	assign blink = blink_count[23];  // slow blink iteration
 
 	initial begin
-		s <= 0; // state variable: 0=STOP, 1=HOLD, 2=GO, 3=SLOW
+		s <= 0; // state variable: 0 = STOP, 1 = HOLD, 2 = GO, 3 = SLOW
 		switch <= 0; // toggle variable for time assignment
 		count <= 0; // main clock counter
 		seconds <= 20; // initial time for STOP
@@ -65,7 +65,7 @@ module Main_traffic(clk, reset, pause, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR,
 			reset_prev <= reset;
 			pause_prev <= pause;
 
-			if (!paused) begin // main countdown
+		if (!paused) begin // main countdown start
 				if (seconds > 0) begin
 					if (count >= one_sec) begin
 						count <= 0;
@@ -110,7 +110,7 @@ module Main_traffic(clk, reset, pause, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR,
 	Seg7dec s1 (tens, HEX1); // tens column
 
 	always @(*) begin
-		LEDR[9:0] = 10'b0; // clear all LEDs first, make sure all are off
+		LEDR[9:0] = 10'b0; // clear all LEDs first, all are off
 
 		case(text)
 			0: begin // STOP (main light stop, cross light go)
