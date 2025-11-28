@@ -11,8 +11,8 @@ module Seg7dec_tb();
     );
 
     initial begin
-        $display(" x   |   y ");
-        $display("-------------");
+        $display(" x | y ");
+        $display("--");
 
         for (integer i = 0; i < 16; i = i + 1) begin
             x = i;  
