@@ -1,5 +1,49 @@
-# Object file
-*.o
+# Simulation and Synthesis Output
+*.log
+*.jou
+*.vcd
+*.wlf
+*.asdb
+*.awc
+*.lib
+*.mgf
+*.data
+*.index
+work/
+sim/
+build/
 
-# Ada Library Information
-*.ali
+# Temporary Files
+*~
+*.bak
+*.swp
+*.tmp
+temp/
+
+# Xilinx Vivado
+*.xpr
+*.cache
+*.data
+*.hw
+*.ip_user_files
+*.runs
+*.sim
+*.srcs
+*.gen
+.Xil/
+
+# Intel Quartus Prime
+*.qpf
+*.qws
+*.qsf
+*.rpt
+*.sof
+*.pof
+*.srf
+*.db
+output_files/
+incremental_db/
+
+# VHDL Specific (if mixed with Verilog)
+*.vhd.o
+vhdl/
